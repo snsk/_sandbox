@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<title>slope picker</title>
+<style>
+	span{ font-size:10px }
+	.button{ 
+		-webkit-border-radius:10px;
+		text-shadow: 2px 2px 3px #333333;
+		font-size:13px;
+		width:150px; 
+		height:50px;
+	}
+</style>
+</head>
+<body>
+
+<input id="start" type="button" class="button" value="注文" onclick="order();"></input>
+<br>
+<span id="aigX"></span>
+<span id="aigY"></span>
+<span id="aigZ"></span>
+<br>
+<span id="ansX"></span>
+<span id="ansY"></span>
+<span id="ansZ"></span>
+
+
+<div id="setter" style='border-style:solid; border-width:1px; width:auto; height:100px;'>この色にしてほしい</div>
+<div id="player" style='border-style:solid; border-width:1px; width:auto; height:100px;'>あなたのパレット</div>
+
+<script>
+var answer = new Array();
+answer.MARGIN = 20;
+
+window.addEventListener("devicemotion", function(e){
+
+	var x = Math.abs(Math.round(e.accelerationIncludingGravity.x * 25.4));
+	var y = Math.abs(Math.round(e.accelerationIncludingGravity.y * 25.4)) ;
+	var z = Math.abs(Math.round(e.accelerationIncludingGravity.z * 25.4)) ;
+
+	document.getElementById("aigX").innerHTML = "X:RED " + x;
+	document.getElementById("aigY").innerHTML = "Y:GREEN " + y;
+	document.getElementById("aigZ").innerHTML = "Z:BLUE " + z;
+
+	document.getElementById("player").style.backgroundColor = "rgb(" + x + "," + y + "," + z + ")";
+
+	if(x > (window.answer[0]-answer.MARGIN) && x < (window.answer[0]+answer.MARGIN)){
+		if(y > (window.answer[1]-answer.MARGIN) && y < (window.answer[1]+answer.MARGIN)){
+			if(z > (window.answer[2]-answer.MARGIN) && z < (window.answer[2]+answer.MARGIN)){
+				alert("hit!");
+			}
+		}
+	}
+
+})
+
+function order(){
+
+	var x = Math.floor( Math.random() * 255 );
+	var y = Math.floor( Math.random() * 255 );
+	var z = Math.floor( Math.random() * 255 );
+
+	document.getElementById("ansX").innerHTML = "X:RED " + x;
+	document.getElementById("ansY").innerHTML = "Y:GREEN " + y;
+	document.getElementById("ansZ").innerHTML = "Z:BLUE " + z;
+
+	document.getElementById("setter").style.backgroundColor = "rgb(" + x + "," + y + "," + z + ")";
+
+	window.answer[0] = x;
+	window.answer[1] = y;
+	window.answer[2] = z;
+
+}
+</script>
+
+</body>
+</html>
