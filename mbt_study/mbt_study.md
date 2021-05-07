@@ -36,6 +36,25 @@ ISTQB MBTでは、どのレベルのどの成果物が有用であるか、ま�
 
 ![](2021-05-03-11-30-24.png)
 
+* 1 Introduction to Model-Based Testing – 90 mins.
+  * 1.1 Objectives and Motivations for MBT
+  * 1.2 MBT Activities and Artifacts in the Fundamental Test Process
+  * 1.3 Integrating MBT into the Software Development Lifecycles
+* 2 MBT Modeling – 250 mins
+  * 2.1 MBT Modeling 
+  * 2.2 Languages for MBT Models
+  * 2.3 Good Practices for MBT Modeling Activities
+* 3 Selection Criteria for Test Case Generation – 205 mins 
+  * 3.1 Classification of MBT Test Selection Criteria  
+  * 3.2 Applying Test Selection Criteria
+* 4 MBT Test Implementation and Execution – 120 mins.
+  * 4.1 Specifics of MBT Test Implementation and Execution
+  * 4.2 Activities of Test Adaptation in MBT
+* 5 Evaluating and Deploying an MBT Approach – 60 mins.
+  * 5.1 Evaluate an MBT Deployment
+  * 5.2 Manage and Monitor the Deployment of an MBT Approach
+ 
+  
 ## syllabus
 
 https://www.istqb.org/downloads/send/6-model-based-tester-extension-documents/46-istqb-ctfl-mbt-syllabus.html
