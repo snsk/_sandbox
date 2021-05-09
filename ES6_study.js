@@ -61,3 +61,4 @@ p(curriedSum(1)(2));
 const addTen = curriedSum(10);
 p(addTen(10))
 
+
