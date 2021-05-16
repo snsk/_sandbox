@@ -1,5 +1,19 @@
 //helper
 const p = (s) => console.log(s);
+const sleep = (time) =>{
+    const d1 = new Date();
+    while (true) {
+        const d2 = new Date();
+        if (d2 - d1 > time) {
+            return;
+        }
+    }
+}
+//3秒以内のランダムな秒数でにID付きの文字列が返ってくる
+const randamWaitReturer = (id) => { 
+    sleep(Math.random()*3000);
+    return 'myid:'+id;
+}
 
 //arrow function
 const f1 = (n) => {return n * n};
@@ -92,5 +106,6 @@ promise.then((value)=>{
 import fetch from 'node-fetch';
 
 fetch('https://api.github.com/users/snsk')
-	.then(res => res.json())
-	.then(json => console.log(json));
+//	.then(res => res.json())
+//	.then(json => console.log(json));
+
