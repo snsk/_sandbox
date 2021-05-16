@@ -111,5 +111,5 @@ fetch('https://api.github.com/users/snsk')
 //	.then(res => res.json())
 //	.then(json => console.log(json));
 
-p(randamWaitReturer(1));
-p(randamWaitReturer(2));
+//p(randamWaitReturer(1));
+//p(randamWaitReturer(2));
