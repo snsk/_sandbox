@@ -19,8 +19,15 @@ resolve()を呼んであるので、then() で受け止めてから先だけを�
 Promise.all([
     randomWaiReturnerWithIn3Sec(10),
     randomWaiReturnerWithIn3Sec(11),
-    randomWaiReturnerWithIn3Sec(12),
-    randomWaiReturnerWithIn3Sec(13)
+    randomWaiReturnerWithIn3Sec(12)
+]).then((result)=>{
+    console.log(result);
+});
+
+Promise.race([
+    randomWaiReturnerWithIn3Sec(100),
+    randomWaiReturnerWithIn3Sec(110),
+    randomWaiReturnerWithIn3Sec(120),
 ]).then((result)=>{
     console.log(result);
 });
