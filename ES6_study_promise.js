@@ -10,9 +10,17 @@ resolve()を呼んであるので、then() で受け止めてから先だけを�
     p(randomWaiReturnerWithIn3Sec(2));
 }).then(()=>{
     p(randomWaiReturnerWithIn3Sec(3));
-    reject();
 }).catch(()=>{
     console.log("error")
 }).finally(()=>{
     console.log("complete")
 })
+
+Promise.all([
+    randomWaiReturnerWithIn3Sec(10),
+    randomWaiReturnerWithIn3Sec(11),
+    randomWaiReturnerWithIn3Sec(12),
+    randomWaiReturnerWithIn3Sec(13)
+]).then((result)=>{
+    console.log(result);
+});
