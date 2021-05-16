@@ -14,5 +14,5 @@ export const sleep = (time) =>{
 //3秒以内のランダムな秒数でにID付きの文字列が返ってくる
 export const randomWaitReturer = (id) => { 
     sleep(Math.random()*3000);
-    return 'myid:'+id;
+    return 'id:'+id;
 }
