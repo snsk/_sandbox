@@ -1,15 +1,12 @@
 "use strict";
 import {p, sleep, randomWaiReturnerWithIn3Sec} from './ES6_study_helper.js';
 
-p(randomWaiReturnerWithIn3Sec('A'));
-p(randomWaiReturnerWithIn3Sec('B'));
-p(randomWaiReturnerWithIn3Sec('C'));
-p(randomWaiReturnerWithIn3Sec('D'));
-
 const promiseTest = new Promise((resolve, reject)=>{
     p(randomWaiReturnerWithIn3Sec(1));
     resolve();
-}).then(()=>{
+}).then(()=>{ 
+/*上で resolve() を呼んでいるので、このthenが発火する。多くのライブラリでは内部で 
+resolve()を呼んであるので、then() で受け止めてから先だけを書けばよい？ってこと？*/
     p(randomWaiReturnerWithIn3Sec(2));
 }).then(()=>{
     p(randomWaiReturnerWithIn3Sec(3));
