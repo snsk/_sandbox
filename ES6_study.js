@@ -65,6 +65,7 @@ p(addTen(10))
 //Promise オブジェクトの自作
 const isSucceeded = true;
 
+//resolve, rejectは Promise についてくるメソッド
 const promise = new Promise((resolve, reject)=>{
     if(isSucceeded){
         resolve('Success');
@@ -86,3 +87,10 @@ promise.then((value)=>{
 .finally(()=>{
     console.log('4.', 'Completed');
 });
+
+//node-fetch モジュールを使う
+import fetch from 'node-fetch';
+
+fetch('https://api.github.com/users/snsk')
+	.then(res => res.json())
+	.then(json => console.log(json));
