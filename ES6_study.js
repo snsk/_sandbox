@@ -1,4 +1,5 @@
-//helper
+//ES6 study all-in-one file(without node_modules)
+//helper start=================================
 const p = (s) => console.log(s);
 const sleep = (time) =>{
     const d1 = new Date();
@@ -14,6 +15,7 @@ const randamWaitReturer = (id) => {
     sleep(Math.random()*3000);
     return 'myid:'+id;
 }
+//helper end=================================
 
 //arrow function
 const f1 = (n) => {return n * n};
@@ -109,3 +111,5 @@ fetch('https://api.github.com/users/snsk')
 //	.then(res => res.json())
 //	.then(json => console.log(json));
 
+p(randamWaitReturer(1));
+p(randamWaitReturer(2));
