@@ -1,6 +1,6 @@
 "use strict";
 
-import {p, sleep, randomWaitReturer} from './ES6_study_helper.js';
+import {p, sleep, randomWaiReturnerWithIn3Sec} from './ES6_study_helper.js';
 
 //arrow function
 const f1 = (n) => {return n * n};
