@@ -1,23 +1,6 @@
 "use strict";
 
-//ES6 study all-in-one file(without node_modules)
-//helper start=================================
-const p = (s) => console.log(s);
-const sleep = (time) =>{
-    const d1 = new Date();
-    while (true) {
-        const d2 = new Date();
-        if (d2 - d1 > time) {
-            return;
-        }
-    }
-}
-//3秒以内のランダムな秒数でにID付きの文字列が返ってくる
-const randamWaitReturer = (id) => { 
-    sleep(Math.random()*3000);
-    return 'myid:'+id;
-}
-//helper end=================================
+import {p, sleep, randomWaitReturer} from './ES6_study_helper.js';
 
 //arrow function
 const f1 = (n) => {return n * n};
