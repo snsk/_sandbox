@@ -1,3 +1,5 @@
+"use strict";
+
 //ES6 study all-in-one file(without node_modules)
 //helper start=================================
 const p = (s) => console.log(s);
