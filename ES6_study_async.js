@@ -1,18 +1,12 @@
 "use strict";
-import {p,randomWaiReturnerWithIn3SecAsync} from './ES6_study_helper.js';
+import {p,staticWaiReturnerWith2Sec, staticWaiReturnerWith2SecAsync} from './ES6_study_helper.js';
 
 const main = async () => {
-    try {
-        p(await randomWaiReturnerWithIn3SecAsync(100));
-        p(await randomWaiReturnerWithIn3SecAsync(200));
-        p(await randomWaiReturnerWithIn3SecAsync(300));
-    } catch (error) {
-        console.error(error);
-    } finally {
-        p('-- Async function Done --');
-    }
-};
+    await Promise.all([
+        p(staticWaiReturnerWith2Sec(100)),
+        p(staticWaiReturnerWith2Sec(200)),
+        p(staticWaiReturnerWith2Sec(300))
+    ]);
+};  
 
-p('-- Start --');
 main();
-p('-- Completed --');
