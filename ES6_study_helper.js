@@ -15,6 +15,12 @@ export const randomWaiReturnerWithIn3Sec = (id) => {
     return 'id:'+id+' wait:'+msecVal;
 }
 
+export const randomWaiReturnerWithIn3SecAsync = async (id) => { 
+    let msecVal = Math.random()*3000;
+    sleep(msecVal);
+    return 'id:'+id+' wait:'+msecVal;
+}
+
 //3s秒後にID付きの文字列が返ってくる
 export const staticWaiReturnerWith2Sec = (id) => { 
     sleep(2000);
