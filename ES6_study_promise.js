@@ -1,36 +1,37 @@
 "use strict";
-import {p, sleep, randomWaiReturnerWithIn3Sec} from './ES6_study_helper.js';
 
-/*
-const promiseTest = new Promise((resolve, reject)=>{
-    p(randomWaiReturnerWithIn3Sec(1));
+const sleep3sec = (id) =>{
+    setTimeout(() => {
+        console.log(id + ' done')
+    }, 3000);
+}
+
+const task1 = new Promise((resolve, reject) =>{
+    sleep3sec(1);
     resolve();
-}).then(()=>{ 
-    p(randomWaiReturnerWithIn3Sec(2));
-}).then(()=>{
-    p(randomWaiReturnerWithIn3Sec(3));
-}).catch(()=>{
-    console.log("error")
-}).finally(()=>{
-    console.log("complete")
-})
-*/
-
-const p1 = new Promise((resolve, reject) =>{
-    resolve(randomWaiReturnerWithIn3Sec(10));
 });
-const p2 = new Promise((resolve, reject) =>{
-    resolve(randomWaiReturnerWithIn3Sec(11));
+const task2 = new Promise((resolve, reject) =>{
+    sleep3sec(2);
+    resolve();
 });
-const p3 = new Promise((resolve, reject) =>{
-    resolve(randomWaiReturnerWithIn3Sec(12));
+const task3 = new Promise((resolve, reject) =>{
+    sleep3sec(3);
+    resolve();
+});
+const task4 = new Promise((resolve, reject) =>{
+    sleep3sec(4);
+    resolve();
+});
+const task5 = new Promise((resolve, reject) =>{
+    sleep3sec(5);
+    resolve();
 });
 
 Promise.all([ 
-    p1,
-    p2,
-    p3
-]).then((result)=>{
-    console.log(result);
-});
+    task1,
+    task2,
+    task3,
+    task4,
+    task5
+]).then()
 
