@@ -34,4 +34,3 @@ Promise.all([
     task4,
     task5
 ]).then()
-
