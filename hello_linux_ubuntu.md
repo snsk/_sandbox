@@ -16,14 +16,17 @@ Linux初学者向け講座の講師⽤メモです。Ubuntu版。Linuxほぼ触�
 
 ## 学習環境
 
-azure A1
+VirtualBox-6.1.22-144080-Win.exe
+ubuntu-20.04.2-live-server-amd64.iso
+ubuser/Password01
+VirtualBox上で起動して、任意のSSHクライアントから接続します。
+特に指定のない人はWindowsならPowerShellから。
 
-ログインは適当なsshクライアント(無ければPowerShellでOK)で、
+> $ip address show
 
->$ssh linux-tutorial-00@20.44.183.126  
->PASS:xxxxxxx
+で現在のマシンのIPを表示(最近のディストリ ifconfig がない)
 
-これがすでにLinuxコマンドなんですけど、、、というツッコミは⽢んじて受けます、、
+ssh ubuser@192.168.27.230
 
 ## 以下講師⽤メモ
 
@@ -62,8 +65,7 @@ azure A1
     * tmp 一時ディレクトリ
     * var ログなど変化し続けるファイルの一時ディレクトリ
 
-* STDIN/STDOUT/STDERR の基本ストリームと、ストリームを繋ぐパイプ"|"、ストリームの向きを変えるリダ
-イレクタ">","&" の理解
+* STDIN/STDOUT/STDERR の基本ストリームと、ストリームを繋ぐパイプ"|"、ストリームの向きを変えるリダイレクタ">","&" の理解
     * $find / hoge | more や $tail -f -5 tmpErrorLog | grep "critical error" > permanentErrorLog とか
 の意味、意義を知る
     * |(パイプ) ︓STDOUTに出たやつを、パイプの次に指定したコマンドのSTDINとして処理する
@@ -128,11 +130,15 @@ lessだろ常考、ってひともいますけど、僕はシンプルなmoreが
 * vim で。emacs派ですけど、ここはvimで。
 * vim hoge.txt で hoge.txt を新規作成してOPEN
     * 何もないファイル操作しても⾯⽩くないので、 wget https://www.ietf.org/rfc/rfc2616.txt として、⻑い⽂書取ってきましょう
+    * vim rfc2616.txt
+        * 手で打たない！！
 * 最低限の操作。vim はモードと切り替えながら操作する。
     * ノーマルモード(ファイルを開いたり、読んだり): esc
     * 挿⼊モード(ファイルの中⾝を編集)︓a
     * 行コピー（ヤンク）:ノーマルモードで yy
     * ペースト:ノーマルモードで  p
+    * 行削除:ノーマルモードで  dd
+    * 単語のコピー：v で範囲選択して y
     * esc-v：ビジュアルモードへ移行
 
 !ターミナルによってはビジュアルモードの編集がうまく行かないことがあります。
