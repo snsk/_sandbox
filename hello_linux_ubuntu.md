@@ -245,7 +245,7 @@ vim で index.html を書いて、表⽰させてみましょー
 
 >$sudo vim /var/www/html/index.html
 
-### python スクリプトをうごかしてみよう
+### Linuxサーバ管理でエラーと戦ってみよう
 
 >$sudo vim /etc/apache2/apache2.conf
 
