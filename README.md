@@ -1,2 +1,2 @@
 # _sandbox
-my sandbox. code snipet, duty code, and so on.. 
+my sandbox. code snipet, duty code, etc
