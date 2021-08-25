@@ -265,16 +265,16 @@ ScriptAlias /cgi-bin/ "/var/www/html/"
 >$sudo vim /var/www/html/hoge.py
 
 ~~~python
-#!/usr/bin/python
+#!/usr/bin/python3
 # coding:utf-8
-import cgi+h
-form = cgi.FieldStorage();
-name = "";
-if ( form.has_key("name") ):
- name = form["name"].value
-print "Content-Type: text/html\n";
-print "Hello World!";
-print "Hi! " + name ;
+
+print("Content-Type: text/html")
+print()
+print("Hello World!")
+
+import cgi
+form = cgi.FieldStorage()
+print("hello," + form.getvalue("name"))
 ~~~
 
 
