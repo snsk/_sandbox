@@ -16,11 +16,11 @@ Linux初学者向け講座の講師⽤メモです。Ubuntu版。Linuxほぼ触�
 
 ## 学習環境
 
-VirtualBox-6.1.22-144080-Win.exe
-ubuntu-20.04.2-live-server-amd64.iso
-ubuser/Password01
-VirtualBox上で起動して、任意のSSHクライアントから接続します。
-特に指定のない人はWindowsならPowerShellから。
+VirtualBox-6.1.22-144080-Win.exe  
+ubuntu-20.04.2-live-server-amd64.iso  
+ubuser/Password01  
+VirtualBox上で起動して、任意のSSHクライアントから接続します。  
+特に指定のない人はWindowsならPowerShellから。  
 
 > $ip address show
 
