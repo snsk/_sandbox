@@ -24,4 +24,7 @@ jobs:
         run: python -V
         
       - name: install tree with apt
-        run: apt install tree -y
+        run: |
+          apt-get install tree -y
+          tree /
+        
