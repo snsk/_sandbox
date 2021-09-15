@@ -20,5 +20,8 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       
-      - name: Run a ls
-        run: ls -la
+      - name: Run a python v
+        run: python -V
+        
+      - name: install tree with apt
+        run: apt install tree -y
