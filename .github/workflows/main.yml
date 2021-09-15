@@ -21,4 +21,4 @@ jobs:
         run: echo Hello, world!
       
       - name: Run a ls
-        run: ls -an
+        run: ls -la
