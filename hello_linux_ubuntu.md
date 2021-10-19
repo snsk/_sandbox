@@ -249,57 +249,22 @@ vim で index.html を書いて、表⽰させてみましょー
 
 ### Linuxサーバ管理でエラーと戦ってみよう
 
->$sudo vim /etc/apache2/apache2.conf
-
-~~~bash
-AddHandler cgi-script .cgi .py
-ScriptAlias /cgi-bin/ "/var/www/html/"
-<Directory "/var/www/html">
- AllowOverride None  
- Options ExecCGI  
- Order allow,deny  
- Allow from all  
-</Directory>  
-~~~
-
->$sudo a2enmod cgid  
->$sudo systemctl restart apache2
->$sudo vim /var/www/html/hoge.py
-
-~~~python
-#!/usr/bin/python3
-# coding:utf-8
-
-print("Content-Type: text/html")
-print()
-print("Hello World!")
-
-import cgi
-form = cgi.FieldStorage()
-print("hello," + form.getvalue("name"))
-~~~
-
-
-* http://20.44.183.126/hoge.py?name=hoge
-* アクセスするとテキストでくる
-* ぱーみっしょんえらー
-* $sudo chmod 755 /var/www/html/hoge.py
-* http://20.44.183.126/hoge.py?name=hoge
-* アクセスすると500
-* ログをみてみよう
-* スクリプトを修正しよう
-* less /var/log/apache2/error.log
-* http://20.44.183.126/hoge.py?name=hoge
-* でました︖ たぶんこんごCGI使うことないです。はい。
-
-
-## CGIのかんたんな解説
-
-* CGIとPerl、CGIとPythonはDOMとJavaScriptの関係にそっくりです
-* CGIはブラウザがサーバに送信する環境変数やHTTP リクエストのBODY部の情報を、サーバ側がどのように受け取るか、そのインターフェースを定義した”仕様”です
-    * CGI⾃体がプログラムなわけではありません、インターフェース仕様です。DOMと⼀緒。
-* HTTPリクエスト、GETの引数についてくるのは環境変数の QUERY_STRING。POSTのBODY部は STDIN に⼊ってきます。
-    * cgi.FieldStorage(); でHTMLのform要素の各値をPythonで扱いやすい構造（連想配列)に変換してくれてます
-    * 上のコードでは連想配列に変換したあとに、その配列⾃体が name というキーを持っているか確認して、持っていたら表⽰のための⽂字列型変数に格納する、という処理をしています
-* この⽅法でブラウザとサーバでデータをやりとりする、というのは太古のアーキテクチャなので、今後新規のウェブ開発で意識的に使うことはまずありません
-    * 現代はDBありきのアーキテクチャが主流です。インフラを除くウェブ技術としては、CRUDをURLで操作するREST、ルーティング、MVCあたりを抑えたうえで、クライアントサイドでのコンポーネント技術であるreactあたりをフムフムと読んでおくとよいでしょう
+* apache止める
+	* systemctl stop apache2
+* 設定ファイルいじる
+	* sudo vim /etc/apache2/apache2.conf
+	* 98 - G で98行目にジャンプ
+	* KeepAlive On の K を消しちゃう
+		* 設定ファイルを誤った、状況
+* apache動かす
+	* systemctl start apache2
+* 動かない
+	* 原因は想像つくけど、調査しよう
+	* journalctl -xe
+	* モロに書いてある
+	* 修正しよう
+	* sudo vim /etc/apache2/apache2.conf
+* apache動かす
+	* systemctl start apache2
+* service --status-all
+	* 動いてる
