@@ -247,7 +247,7 @@ vim で index.html を書いて、表⽰させてみましょー
 
 >$sudo vim /var/www/html/index.html
 
-### Linuxサーバ管理でエラーと戦ってみよう
+## サーバ管理でエラーと戦ってみよう
 
 * apache止める
 	* systemctl stop apache2
