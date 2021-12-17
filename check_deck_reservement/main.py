@@ -10,7 +10,7 @@ def driver_init():
     return webdriver.Chrome(options=options)
 
 driver = driver_init()
-driver.get('https://hashito.biz/')
-print(driver.find_element_by_xpath('/html/body/div[1]/div/section/div/div/h2').text)
+driver.get('https://store.steampowered.com/steamdeck')
+print(driver.find_element_by_class_name('reservations_noreserve_UsTrT').text)
 print(driver.current_url)
 driver.quit()
