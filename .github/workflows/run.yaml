@@ -1,4 +1,4 @@
-name: selenium-github-actions
+name: steam deck availability check
 on:
   schedule:
     - cron: '0 */8 * * *'
