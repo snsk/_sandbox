@@ -11,6 +11,10 @@ def driver_init():
 
 driver = driver_init()
 driver.get('https://store.steampowered.com/steamdeck')
-print(driver.find_element_by_class_name('reservations_noreserve_UsTrT').text)
-print(driver.current_url)
+
+if len(driver.find_elements_by_class_name('reservations_noreserve_UsTrT')>0):
+    print(driver.find_element_by_class_name('reservations_noreserve_UsTrT').text)
+else:
+    print("Steam deck reservement has already started!")
+
 driver.quit()
