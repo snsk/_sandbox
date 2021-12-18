@@ -1,5 +1,6 @@
 from get_chrome_driver import GetChromeDriver
 from selenium import webdriver
+import sys
 
 get_driver = GetChromeDriver()
 get_driver.install()
@@ -24,6 +25,6 @@ else:
 if expect_text == actual_text:
     print('Steam Deck does not available my region ...')
 else:
-    print("Steam Deck availability region has changed!")
+   sys.exit("Steam Deck availability region has changed!")
 
 driver.quit()
