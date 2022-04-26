@@ -1,4 +1,4 @@
-## 問題：
+## 問題
 
 * https://www.katacoda.com/courses/ubuntu/playground にアクセスしてください
   * github account でログインしてください
