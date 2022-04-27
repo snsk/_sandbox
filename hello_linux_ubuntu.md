@@ -24,6 +24,9 @@ VirtualBox上で起動して、任意のSSHクライアントから接続しま�
 
 > $ip address show
 
+またはここ。要Github, Twitter, Google etc login
+https://www.katacoda.com/courses/ubuntu/playground
+
 で現在のマシンのIPを表示(最近のディストリ ifconfig がない)
 
 ssh ubuser@192.168.27.230

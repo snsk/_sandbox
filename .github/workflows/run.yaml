@@ -1,0 +1,17 @@
+name: steam deck availability check
+on:
+  schedule:
+    - cron: '0 */8 * * *'
+jobs:
+  selenium:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+      - run: |
+          pip install get-chrome-driver --upgrade
+          pip install -r check_deck_reservement/requirements.txt
+          python check_deck_reservement/main.py
