@@ -1,3 +1,7 @@
+## これはなに
+
+Linux上でサーバーのエラーを調査するための最低限の知識があることを確認するテストです。
+
 ## 問題
 
 * https://www.katacoda.com/courses/ubuntu/playground にアクセスしてください
